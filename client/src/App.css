@@ -1,0 +1,41 @@
+/* Base styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #e2e7e7;
+}
+
+/* End Base Styles */
+
+/* Navbar styles */
+
+.navbar {
+  background-color: black;
+  height: 60px;
+}
+
+.navbar-title {
+  padding: 10px 0 0 10px;
+  font-size: 2.1rem;
+  color: white;
+}
+
+.navbar-links {
+  margin: 20px;
+  float: right;
+}
+
+.navbar-link{
+  list-style-type: none;
+}
+
+.navbar-link a {
+  color: gold;
+  font-size: 20px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* End Navbar Styles */
