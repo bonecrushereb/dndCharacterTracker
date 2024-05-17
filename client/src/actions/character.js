@@ -7,8 +7,7 @@ import {
 //Get Characters
 export const getCharacters = () => async (dispatch) => {
     try {
-        const res = await api.get('http://localhost:5173/api/characters');
-
+        const res = await api.get('http://localhost:5000/api/characters');
         dispatch({
             type: GET_CHARACTERS,
             payload: res.data
