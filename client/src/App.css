@@ -37,8 +37,30 @@
     margin-right: 50px;
     float: right;
 }
-
-
-
 /* End Navbar Styles */
+
+/* Dashboard styles */
+
+.dashboard {
+    margin: 20px;
+}
+
+.characterCard {
+    border: 1px solid black;
+    width: 200px;
+    padding: 5px;
+    margin: 50px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+}
+
+.cardButtons {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-between;
+}
+
+/* End Dashboard Styles */
 
