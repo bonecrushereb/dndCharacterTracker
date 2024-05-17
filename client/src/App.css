@@ -1,0 +1,44 @@
+/* Base Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #f3f3f3;
+  }
+
+  a {
+    text-decoration: none;
+    list-style-type: none;
+  }
+
+/* End Base Styles */
+
+/* Navbar Styles */
+
+.navbar {
+    padding: 10px;
+    background: black;
+}
+
+.navBarTitle {
+    margin: 10px 0 0 10px;
+    color: white;
+}
+
+.NavMenu a{
+    color: gold;
+    margin-right: 50px;
+    float: right;
+}
+
+
+
+/* End Navbar Styles */
+
