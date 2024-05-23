@@ -46,9 +46,9 @@ namespace Persistence
                     Ideals="test",
                     Bonds="test",
                     Flaws="test",
-                    Organizations="test",
-                    Allies="test",
-                    Enemies="test",
+                    Organizations=new List<String>{"test"},
+                    Allies=new List<String>{"test"},
+                    Enemies=new List<String>{"test"},
                     BackStory="test"
                 }
             };
