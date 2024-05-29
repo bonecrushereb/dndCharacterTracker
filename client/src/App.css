@@ -64,3 +64,223 @@
 
 /* End Dashboard Styles */
 
+/* Character Form Styles */
+
+.formTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.characterName {
+    padding: 5px;
+    margin: 10px;
+    width: 25%;
+}
+
+.characterRace {
+    padding: 5px;
+    margin: 10px;
+}
+
+.characterClass {
+    padding: 5px;
+    margin: 10px; 
+}
+
+.characterLevel {
+    padding: 5px;
+    margin: 10px;
+    width: 50px;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+}
+.skill {
+    width: 50px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.healthbar {
+    width: 75%;
+    position: absolute;
+    margin-left: 400px;
+}
+
+.health {
+    width: 50px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.tools {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 50px 0 0 100px;
+}
+
+.toolInput {
+    margin-top: 40px;
+    padding: 5px;
+}
+
+.characterAge {
+    width: 50px;
+    margin: 10px;
+    padding: 5px; 
+}
+
+.characterSex {
+    width: 50px;
+    margin: 10px;
+    padding: 5px; 
+}
+
+.weight {
+    width: 75px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.height {
+    width: 75px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.hairStyle {
+    margin: 10px;
+    padding: 5px;
+}
+
+.eyeColor {
+    margin: 10px;
+    padding: 5px;
+}
+
+.skinColor {
+    margin: 10px;
+    padding: 5px;
+}
+
+.background {
+    margin: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+.alignment {
+    width: 200px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.faith {
+    width: 200px;
+    margin: 10px;
+    padding: 5px; 
+}
+
+.lifeStyle {
+    width: 200px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.personality {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.people {
+    margin: 10px;
+}
+
+.organization {
+    width: 25%;
+    margin: 10px;
+    padding: 5px;
+}
+
+.allies {
+    width: 25%;
+    margin: 10px;
+    padding: 5px;
+}
+
+.enemies {
+    width: 25%;
+    margin: 10px;
+    padding: 5px;
+}
+
+.backstory {
+    margin: 10px;
+}
+/* End Character Form Styles */
+
+/* Character View Styles */
+
+.characterView-Header {
+    margin: 40px 0 0 100px;
+    line-height: 1.4em;
+}
+
+.characterView-Header p {
+    font-size: 13px;
+}
+
+.characterView-skills {
+    margin-top: 20px;
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.characterView-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.abilityscore {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.characterView-profbonus {
+    margin-top: 20px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid black;
+}
+
+.characterView-walkspeed {
+    margin-top: 20px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid black;
+}
+
+/* End Character View Styles */
+
+

@@ -75,9 +75,9 @@ namespace Domain
         public string Bonds { get; set; }
         public string Flaws { get; set; }
 
-        public string Organizations { get; set; }
-        public string Allies { get; set; }
-        public string Enemies { get; set; }
+        public List<string> Organizations { get; set; }
+        public List<string> Allies { get; set; }
+        public List<string> Enemies { get; set; }
         public string BackStory { get; set; }
 
     }
