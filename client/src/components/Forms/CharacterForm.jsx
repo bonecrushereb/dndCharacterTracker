@@ -1,12 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link, useMatch, useParams } from 'react-router-dom';
 
-import { createCharacter } from '../../actions/character';
+import { createCharacter, getCharacter } from '../../actions/character';
 import { characterModel } from '../../models/characterModel';
 
-const CharacterForm = ({character: {character}, createCharacter }) => {
+const CharacterForm = ({character: {character}, createCharacter, getCharacter }) => {
     const [formData, setFormData] = useState(characterModel);
+    const { id } = useParams();
+
+    const creatingCharacter = useMatch('/create');
 
     const {
         characterName,
@@ -48,17 +52,39 @@ const CharacterForm = ({character: {character}, createCharacter }) => {
         backstory
     } = formData;
 
+    useEffect(() => {
+        if(!character) {
+            getCharacter(id);
+            console.log('get character hit');
+        } else {
+            const characterData = {...characterModel};
+            for(const key in character) {
+                if(key in characterData) characterData[key] = character[key];
+            }
+        }
+    }, [character, getCharacter, id])
+
     const onChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
-    const onSubmit = (e) => {
+    const onArrayChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((previousFormData) => {
+            return {
+                ...previousFormData, 
+                [name]: [value]
+            }
+        })
+    }
+
+    const onSubmit = async(e) => {
         e.preventDefault();
-        createCharacter(formData);
+       await createCharacter(formData);
     }
     return (
         <>
-        <h1 className='formTitle'>Character Sheet</h1>
+        <h1 className='formTitle'>{creatingCharacter ? 'Character Sheet' : 'Edit Character'}</h1>
         
         <form onSubmit={onSubmit}>
             <div>
@@ -76,9 +102,9 @@ const CharacterForm = ({character: {character}, createCharacter }) => {
 
             <div className='tools'>
                 <input className='toolInput' type="text" placeholder="Armor" name="armor" value={armor} onChange={onChange}/>
-                <input className='toolInput' type="text" placeholder="Weapons" name="weapons" value={weapons} onChange={onChange}/>
-                <input className='toolInput' type="text" placeholder="Tools" name="tools" value={tools} onChange={onChange}/>
-                <input className='toolInput' type="text" placeholder="Languages" name="languages" value={languages} onChange={onChange}/>
+                <input className='toolInput' type="text" placeholder="Weapons" name="weapons" value={weapons} onChange={onArrayChange}/>
+                <input className='toolInput' type="text" placeholder="Tools" name="tools" value={tools} onChange={onArrayChange}/>
+                <input className='toolInput' type="text" placeholder="Languages" name="languages" value={languages} onChange={onArrayChange}/>
             </div>
 
             <div className='skills'>
@@ -118,13 +144,20 @@ const CharacterForm = ({character: {character}, createCharacter }) => {
             </div>
 
             <div className='people'>
-                <input className='organization' placeholder='organizations' name="organizations" value={organizations} onChange={onChange} />
-                <input className='allies' placeholder='allies' name="allies" value={allies} onChange={onChange} />
-                <input className='enemies' placeholder='enemies' name="enemies" value={enemies} onChange={onChange} />
+                <input className='organization' placeholder='organizations' name="organizations" value={organizations} onChange={onArrayChange} />
+                <input className='allies' placeholder='allies' name="allies" value={allies} onChange={onArrayChange} />
+                <input className='enemies' placeholder='enemies' name="enemies" value={enemies} onChange={onArrayChange} />
             </div>
 
             <div>
                 <textarea className='backstory' placeholder='backstory' name="backstory" value={backstory} cols="170" rows="20" onChange={onChange}></textarea>
+            </div>
+            
+            <div>
+                <input type="submit" className="btn btn-primary my-1" />
+                <Link to="/">
+                Go Back
+                </Link>
             </div>
         </form>
         </>
@@ -133,6 +166,7 @@ const CharacterForm = ({character: {character}, createCharacter }) => {
 
 CharacterForm.propTypes = {
     createCharacter: PropTypes.func.isRequired,
+    getCharacter: PropTypes.func.isRequired,
     character: PropTypes.object.isRequired
 }
 
@@ -140,4 +174,4 @@ const mapStateToProps = state => ({
     character: state.characterReducer
 })
 
-export default connect(mapStateToProps, { createCharacter })(CharacterForm)
+export default connect(mapStateToProps, { createCharacter, getCharacter })(CharacterForm)

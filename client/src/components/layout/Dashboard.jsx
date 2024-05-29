@@ -1,29 +1,34 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
 import { Card, Button } from 'react-bootstrap'
 
 import { getCharacters } from '../../actions/character';
+import { Link } from 'react-router-dom';
 
 const Dashboard = ({ getCharacters, character: {characters} }) => {
     useEffect(() => {
         getCharacters();
     }, [getCharacters]);
+
     return (
         <>
         <div className='dashboard'>
             <h1>My Characters</h1>
 
-            <div className='characterCard'>
+            <div>
                 {characters.map((character) => (
-                    <Card key={character.id}>
+                    <Card className='characterCard' key={character.id}>
                         <Card.Body>
                             <Card.Title>{character.characterName}</Card.Title>
                             <Card.Text> level {character.level} | {character.race} | {character.characterClass}</Card.Text>
                             <div className='cardButtons'>
-                                <Button>View</Button>
-                                <Button>Edit</Button>
+                                <Link to={`/view/${character.id}`}>
+                                    <Button>View</Button>
+                                </Link>
+                                <Link to={`/edit/${character.id}`}>
+                                    <Button>Edit</Button>
+                                </Link>
                                 <Button>Delete</Button>
                             </div>
                         </Card.Body>

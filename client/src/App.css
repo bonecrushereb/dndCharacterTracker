@@ -225,8 +225,62 @@ textarea {
 .backstory {
     margin: 10px;
 }
-
-
 /* End Character Form Styles */
+
+/* Character View Styles */
+
+.characterView-Header {
+    margin: 40px 0 0 100px;
+    line-height: 1.4em;
+}
+
+.characterView-Header p {
+    font-size: 13px;
+}
+
+.characterView-skills {
+    margin-top: 20px;
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.characterView-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.abilityscore {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.characterView-profbonus {
+    margin-top: 20px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid black;
+}
+
+.characterView-walkspeed {
+    margin-top: 20px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid black;
+}
+
+/* End Character View Styles */
 
 

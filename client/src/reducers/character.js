@@ -1,5 +1,6 @@
 import {
     GET_CHARACTERS,
+    GET_CHARACTER,
     CREATE_CHARACTER,
     CHARACTER_ERROR
 } from '../actions/type';
@@ -18,6 +19,11 @@ function characterReducer(state = initialState, action) {
             return {
                 ...state,
                 characters: payload
+            };
+        case GET_CHARACTER: 
+            return {
+                ...state,
+                character: payload
             };
         case CREATE_CHARACTER: 
             return {

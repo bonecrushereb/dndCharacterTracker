@@ -10,8 +10,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240513152326_SeedDatabase")]
-    partial class SeedDatabase
+    [Migration("20240524161013_newINITIALCREATE")]
+    partial class newINITIALCREATE
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

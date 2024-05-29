@@ -5,7 +5,7 @@
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class newINITIALCREATE : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,10 +16,10 @@ namespace Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    CharacterName = table.Column<string>(type: "TEXT", nullable: false),
                     Sex = table.Column<string>(type: "TEXT", nullable: true),
                     Race = table.Column<string>(type: "TEXT", nullable: false),
-                    Class = table.Column<string>(type: "TEXT", nullable: false),
+                    CharacterClass = table.Column<string>(type: "TEXT", nullable: false),
                     Level = table.Column<int>(type: "INTEGER", nullable: false),
                     Strength = table.Column<int>(type: "INTEGER", nullable: false),
                     Dexterity = table.Column<int>(type: "INTEGER", nullable: false),
